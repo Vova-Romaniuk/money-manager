@@ -122,7 +122,7 @@ export class UsersController {
     }
   }
 
-  //Get / logout
+  //Get / logo
   @Get('/logout')
   logout(@Request() req): any {
     req.session.destroy();
