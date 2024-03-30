@@ -36,9 +36,7 @@ function TrackerActions({ setTransactions, userId }) {
 			amount: +values.amount,
 			userId: userId,
 		});
-		console.log(responce);
 		const { data } = responce;
-		console.log(data);
 		setTransactions((prev) => [...prev, data]);
 	};
 	return (
