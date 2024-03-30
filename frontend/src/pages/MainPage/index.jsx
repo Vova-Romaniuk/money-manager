@@ -28,7 +28,6 @@ function MainPage() {
 	};
 
 	const deleteTransactions = async (id) => {
-		console.log(id);
 		setTransactions(transactions.filter((item) => item._id !== id));
 		await apiClient.delete(`users/${userData?._id}/transaction/${id}`);
 	};

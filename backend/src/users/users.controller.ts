@@ -121,9 +121,8 @@ export class UsersController {
       throw new HttpException('Щось пішло не так', HttpStatus.BAD_REQUEST);
     }
   }
-  ////////////////////////////////////////////////////////////
 
-  //Get / logout
+  //Get / logo
   @Get('/logout')
   logout(@Request() req): any {
     req.session.destroy();
