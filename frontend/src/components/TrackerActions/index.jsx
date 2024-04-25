@@ -2,7 +2,6 @@ import { useState } from "react";
 import InputWrapper from "../InputWrapper";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import Button from "../Button";
-import uuid from "react-uuid";
 import { useEffect } from "react";
 import { transactionValidationSchema } from "../../validations/transaction.schema";
 import { apiClient } from "../../app/apiClient";
@@ -30,14 +29,17 @@ function TrackerActions({ setTransactions, userId }) {
 		setMaxDate(today);
 	}
 
-	const createTransactions = async (values) => {
-		const responce = await apiClient.post("users/transaction", {
-			...values,
-			amount: +values.amount,
-			userId: userId,
-		});
-		const { data } = responce;
-		setTransactions((prev) => [...prev, data]);
+	const createTransactions = async (values, { resetForm }) => {
+		try {
+			const responce = await apiClient.post("users/transaction", {
+				...values,
+				amount: +values.amount,
+				userId: userId,
+			});
+			const { data } = responce;
+			setTransactions((prev) => [...prev, data]);
+			resetForm();
+		} catch (error) {}
 	};
 
 	return (

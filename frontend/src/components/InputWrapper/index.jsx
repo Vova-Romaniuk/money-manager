@@ -6,6 +6,7 @@ function InputWrapper({
 	onChange,
 	type = "text",
 	max,
+	value,
 }) {
 	return (
 		<div className='flex flex-col'>
@@ -19,6 +20,7 @@ function InputWrapper({
 				type={type}
 				id={inputName}
 				placeholder={placeholder}
+				value={value && value}
 				onChange={onChange}
 				name={inputName}
 				max={max && max}
