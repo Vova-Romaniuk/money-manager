@@ -8,10 +8,10 @@ export const registrationValidationSchema = Yup.object({
 		.required("Email є обов'язковим полем"),
 	name: Yup.string().required("Ім'я є обов'язковим полем"),
 	password: Yup.string()
-		.required("Password is required")
-		.min(5, "Your password is too short.")
-		.matches(/[a-zA-Z]/, "Password can only contain Latin letters."),
+		.required("Пароль є обов'язковим полем")
+		.min(5, "Ваш пароль занадто короткий")
+		.matches(/[a-zA-Z]/, "Пароль може містити лише латинські літери"),
 	confirmPassword: Yup.string()
-		.required("Password is required")
-		.oneOf([Yup.ref("password")], "Passwords must match"),
+		.required("Пароль є обов'язковим полем")
+		.oneOf([Yup.ref("password")], "Паролі мають збігатися"),
 });

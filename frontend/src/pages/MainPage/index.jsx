@@ -143,13 +143,13 @@ function MainPage() {
 								<Button
 									onClick={closeDialog}
 									className='mt-5 w-fit mx-auto px-5'>
-									Cancel
+									Відмінити
 								</Button>
 							)}
 							<Button
 								type='submit'
 								className='mt-5 w-fit mx-auto px-5'>
-								Submit
+								Підтвердити
 							</Button>
 						</div>
 					</form>

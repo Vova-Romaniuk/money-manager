@@ -39,6 +39,7 @@ function TrackerActions({ setTransactions, userId }) {
 		const { data } = responce;
 		setTransactions((prev) => [...prev, data]);
 	};
+
 	return (
 		<div className='w-full h-5/6 flex flex-col mt-5 cursor-pointer'>
 			<Formik
@@ -92,7 +93,6 @@ function TrackerActions({ setTransactions, userId }) {
 									component='span'
 								/>
 							</div>
-
 							<div class='flex items-center justify-evenly my-4'>
 								<div className=''>
 									<Field
